@@ -4,7 +4,8 @@
 
 var App = function () {
 	
-	var modul1 = new basicModule();
+	var modul1 = new basicModule(),
+	    modul2 = new accordeonModule();
 }
 
 App.prototype.getData = function () {
