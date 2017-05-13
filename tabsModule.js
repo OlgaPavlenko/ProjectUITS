@@ -7,17 +7,24 @@ var tabsModule = function(data) {
 
 		$h.d('.tabs-module', 'click', '.tab', function (e) {
 
-			var open = document.querySelectorAll('.tab:not(.tabs-close)');
+			var tabsLink = document.querySelectorAll('.tab'),
+				  tabsContent = document.querySelectorAll('.tab-pane'),
+				  tabsLinkId = this.closest('li').firstChild.getAttribute('href'),
+				  cleartabsLinkId = tabsLinkId.replace('#', '');
+				  
 
+				for(var i = 0; i < tabsLink.length; i++) {
 
-			for (var i = 0; i < open.length; i++ ) {
+				  if (tabsLink[i].classList.contains('active')) {
 
-				open[i].classList.add('tabs-close');
-	 		}
+				  	tabsLink[i].classList.remove('active');	
 
-	 		//var openElem = this.closest('.tab');
-			//openElem.classList.remove('tabs-close');
-	})
+				  }	
+
+				 }
+
+				this.closest('li').classList.add('active');
+	});
 
 }
 
